@@ -8,7 +8,7 @@ const Profile = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("/upload", formData);
+      const res = await axios.post("https://blogapp-ma64.onrender.com/api/upload", formData);
       // console.log(res.data);
       return res.data;
     } catch (err) {
