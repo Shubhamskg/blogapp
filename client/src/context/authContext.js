@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-
 export const AuthContext = createContext();
+import { Link, useNavigate } from "react-router-dom";
 
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
@@ -22,11 +22,13 @@ export const AuthContextProvider = ({ children }) => {
     await axios.delete("https://blogapp-ma64.onrender.com/api/users");
     setCurrentUser(null);
   };
+  const navigate = useNavigate();
 
 
   const logout = async (inputs) => {
     await axios.post("https://blogapp-ma64.onrender.com/api/auth/logout");
     setCurrentUser(null);
+    navigate("/");
   };
 
   useEffect(() => {
