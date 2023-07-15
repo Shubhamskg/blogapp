@@ -62,7 +62,7 @@ const { currentUser, logout } = useContext(AuthContext);
               <img src={`../upload/${post.img}`} alt="" />
             </div>
             <div className="content">
-              <Link className="link" to={currentUser?`/post/${post.id}`:"/"}>
+              <Link className="link" to={currentUser?`/post/${post.id}`:"/login"}>
                 <h1>{post.title}</h1>
               </Link>
               <p>{getText(post.desc)}</p>
