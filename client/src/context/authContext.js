@@ -1,11 +1,12 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-const navigate = useNavigate();
+
 export const AuthContext = createContext();
 
 
 export const AuthContextProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("user")) || null
   );
