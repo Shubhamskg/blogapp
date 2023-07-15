@@ -9,23 +9,23 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post("/auth/login", inputs);
+    const res = await axios.post("https://blogapp-ma64.onrender.com/api/auth/login", inputs);
     console.log(res.data)
     setCurrentUser(res.data);
   };
   const update = async (inputs) => {
-    const res = await axios.put("/users", inputs);
+    const res = await axios.put("https://blogapp-ma64.onrender.com/api/users", inputs);
     console.log(res.data)
     setCurrentUser(res.data);
   };
   const deleted = async () => {
-    await axios.delete("/users");
+    await axios.delete("https://blogapp-ma64.onrender.com/api/users");
     setCurrentUser(null);
   };
 
 
   const logout = async (inputs) => {
-    await axios.post("/auth/logout");
+    await axios.post("https://blogapp-ma64.onrender.com/api/auth/logout");
     setCurrentUser(null);
   };
 
