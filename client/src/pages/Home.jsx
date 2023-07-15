@@ -52,7 +52,7 @@ const Home = () => {
     return doc.body.textContent
   }
 
-
+const { currentUser, logout } = useContext(AuthContext);
   return (
     <div className="home">
       <div className="posts">
@@ -62,7 +62,7 @@ const Home = () => {
               <img src={`../upload/${post.img}`} alt="" />
             </div>
             <div className="content">
-              <Link className="link" to={`/post/${post.id}`}>
+              <Link className="link" to={currentUser?`/post/${post.id}`:"/post"}>
                 <h1>{post.title}</h1>
               </Link>
               <p>{getText(post.desc)}</p>
