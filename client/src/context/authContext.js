@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 export const AuthContext = createContext();
 
 
@@ -7,7 +8,7 @@ export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("user")) || null
   );
-
+ const navigate = useNavigate();
   const login = async (inputs) => {
     const res = await axios.post("https://blogapp-ma64.onrender.com/api/auth/login", inputs);
     console.log(res.data)
