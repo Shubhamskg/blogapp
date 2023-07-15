@@ -3,7 +3,7 @@ import { useEffect,useContext } from "react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
-
+import { AuthContext } from "../context/authContext";
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
