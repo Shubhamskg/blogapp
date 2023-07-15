@@ -62,7 +62,7 @@ const Home = () => {
               <img src={`../upload/${post.img}`} alt="" />
             </div>
             <div className="content">
-              <Link className="link" to={`https://blogapp-ma64.onrender.com/api/post/${post.id}`}>
+              <Link className="link" to={`/post/${post.id}`}>
                 <h1>{post.title}</h1>
               </Link>
               <p>{getText(post.desc)}</p>
