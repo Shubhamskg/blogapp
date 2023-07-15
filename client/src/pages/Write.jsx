@@ -18,7 +18,7 @@ const Write = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("/upload", formData);
+      const res = await axios.post("https://blogapp-ma64.onrender.com/api/upload", formData);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -31,13 +31,13 @@ const Write = () => {
 
     try {
       state
-        ? await axios.put(`/posts/${state.id}`, {
+        ? await axios.put(`https://blogapp-ma64.onrender.com/api/posts/${state.id}`, {
             title,
             desc: value,
             cat,
             img: file ? imgUrl : "",
           })
-        : await axios.post(`/posts/`, {
+        : await axios.post(`https://blogapp-ma64.onrender.com/api/posts/`, {
             title,
             desc: value,
             cat,
