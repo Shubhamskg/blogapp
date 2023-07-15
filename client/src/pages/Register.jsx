@@ -8,7 +8,7 @@ const Register = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("/upload", formData);
+      const res = await axios.post("https://blogapp-ma64.onrender.com/api/upload", formData);
       // console.log(res.data);
       return res.data;
     } catch (err) {
@@ -32,7 +32,7 @@ const Register = () => {
     e.preventDefault();
     const imgUrl = await upload();
     try {
-      const res =await axios.post("/auth/register", {
+      const res =await axios.post("https://blogapp-ma64.onrender.com/api/auth/register", {
         username:inputs.username,
         email:inputs.email,
         password:inputs.password,
